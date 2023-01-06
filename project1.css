@@ -87,6 +87,7 @@ h3 {
 @media screen and (min-width:1200px) {
   body {
     width: 1200px;
+    margin: 0 auto 0;
   }
   header{
     width:1200px;
