@@ -20,11 +20,13 @@ function toNumber(input){
   let returnArray = []
   const array = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   for (let i of input) {
-    if (array.indexOf(i)+1) {
-      returnArray.push(array.indexOf(i)+1)
+    let output = array.indexOf(i)+1
+    if (output) {
+      returnArray.push(output)
     } else {
       returnArray.push('default')
     }
   }
   return returnArray
 }
+
