@@ -50,6 +50,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  width:100vw;
 }
 
 .section-title {
@@ -85,12 +86,9 @@ h3 {
 }
 
 @media screen and (min-width:1200px) {
-  body {
-    width: 1200px;
-    margin: 0 auto 0;
-  }
-  header{
+  #section2{
     width:1200px;
+    margin: 0 auto 0;
   }
   article {
     width:450px;
@@ -98,6 +96,9 @@ h3 {
 }
 @media screen and (max-width:420px) {
 
+  #section2{
+    margin:0 auto 0;
+  }
   article {
     width:300px;
   }
