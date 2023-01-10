@@ -77,29 +77,32 @@ h3 {
 }
 
 .button {
-  display: block;
-  width: 80px;
-  margin: 30px auto 0px auto;
+  width: 100px;
+  margin: 40px auto 0px auto;
   border: none;
   background: #B0E0E6;
-  border-radius: 20%;
+  border-radius: 40%;
+}
+.append {
+  display:none;
 }
 
 @media screen and (min-width:1200px) {
-  #section2{
-    width:1200px;
-    margin: 0 auto 0;
-  }
+
   article {
     width:450px;
+  }
+  .article-container{
+    width:1200px;
+    margin: 0 auto 0;
   }
 }
 @media screen and (max-width:420px) {
 
-  #section2{
-    margin:0 auto 0;
-  }
   article {
     width:300px;
+  }
+  .article-container{
+    margin:0 auto 0;
   }
 }
