@@ -6,10 +6,10 @@ function avg(data) {
     total += i.price
   }
   let average = total / data.size
-  console.log(average)
+  return average
 }
 
-avg({
+console.log(avg({
   size: 3,
   products: [{
       name: 'Product 1',
@@ -24,4 +24,4 @@ avg({
       price: 250,
     },
   ],
-})
+}))
