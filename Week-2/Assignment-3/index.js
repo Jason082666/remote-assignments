@@ -7,6 +7,7 @@ function count(input) {
   }
   return output
 }
+// test function count
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1));
 // should print {a:3, b:1, c:2, x:1}
@@ -28,6 +29,7 @@ function groupByKey(input) {
   }
   return output
 }
+// test function groupByKey
 let input2 = [{
     key: "a",
     value: 3
