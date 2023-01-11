@@ -26,3 +26,4 @@ console.log(avg({
     },
   ],
 }))
+// should print 350
