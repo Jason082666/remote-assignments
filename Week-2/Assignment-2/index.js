@@ -9,6 +9,7 @@ function avg(data) {
   return average
 }
 
+// test function avg
 console.log(avg({
   size: 3,
   products: [{
