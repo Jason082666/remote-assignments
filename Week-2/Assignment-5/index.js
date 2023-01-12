@@ -7,7 +7,6 @@ function binarySearchPosition(numbers, target) {
     midPoint = Math.floor((startPoint + endPoint) / 2)
     if (startPoint > endPoint) {
       return -1
-      break
     }
     if (numbers[midPoint] === target) {
       return midPoint
