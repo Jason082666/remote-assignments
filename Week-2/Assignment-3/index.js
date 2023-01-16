@@ -1,33 +1,50 @@
 function count(input) {
-  let output = {}
-  let trim = input.filter((item, index) => input.indexOf(item) === index)
-  for (const element of trim) {
-    const value = input.filter((i) => i === element).length
-    output[element] = value
-  }
-  return output
+  const obj = {}
+  input.forEach(element => {
+    if (obj[element]) {
+      obj[element] += 1
+    } else {
+      obj[element] = 1
+    }
+  })
+  return obj
 }
+
 // test function count
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
 console.log(count(input1));
 // should print {a:3, b:1, c:2, x:1}
 
-function groupByKey(input) {
-  // your code here
-  let output = {}
-  let keyArray = input.map((element) => element.key)
-  let trimKeyArray = keyArray.filter((element, index) => keyArray.indexOf(element) === index)
-  for (const i of trimKeyArray) {
-    let value = 0
-    for (const j of input) {
+// function groupByKey(input) {
+//   // your code here
+//   let output = {}
+//   let keyArray = input.map((element) => element.key)
+//   let trimKeyArray = keyArray.filter((element, index) => keyArray.indexOf(element) === index)
+//   for (const i of trimKeyArray) {
+//     let value = 0
+//     for (const j of input) {
 
-      if (j.key === i) {
-        value += j.value
-      }
+//       if (j.key === i) {
+//         value += j.value
+//       }
+//     }
+//     output[i] = value
+//   }
+//   return output
+// }
+
+function groupByKey(input) {
+  const obj = {}
+  input.forEach((element) => {
+    const key = element.key
+    const value = element.value
+    if (obj[key]) {
+      obj[key] += value
+    } else {
+      obj[key] = value
     }
-    output[i] = value
-  }
-  return output
+  })
+  return obj
 }
 // test function groupByKey
 let input2 = [{
