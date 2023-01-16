@@ -8,5 +8,6 @@ const button = document.querySelector('.button')
 button.addEventListener('click', () => {
   let articleAppend = document.querySelector('.append')
   articleAppend.classList.remove('append')
+  articleAppend.scrollIntoView()
 
 })

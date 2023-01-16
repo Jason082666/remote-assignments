@@ -7,6 +7,6 @@ $section1.on('click',()=> {
 const $button = $('.button')
 $button.on('click',()=>{
   let $articleAppend = $('.article-container').eq(1)
-  console.log($articleAppend)
   $articleAppend.toggleClass('append')
+  $articleAppend[0].scrollIntoView()
 })

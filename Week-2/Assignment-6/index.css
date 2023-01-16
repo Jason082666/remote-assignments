@@ -52,6 +52,9 @@ li {
   justify-content: center;
   width:100vw;
 }
+#section1 h1:hover {
+  cursor: pointer;
+}
 
 .section-title {
   text-align: center;
@@ -82,6 +85,9 @@ h3 {
   border: none;
   background: #B0E0E6;
   border-radius: 40%;
+}
+.button:hover {
+  cursor: pointer;
 }
 .append {
   display:none;
