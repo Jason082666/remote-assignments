@@ -29,3 +29,6 @@ console.log(binarySearchPosition([1, 2, 5, 6, 7], 1));
 console.log(binarySearchPosition([1, 2, 5, 6, 7, 8, 9, 11, 12], 10));
 // should print -1 
 
+
+
+
