@@ -16,8 +16,8 @@ app.use(cookieParser())
 app.get('/', (req, res) => {
   res.render('main')
 })
-app.use('/data',dataRoutes)
-app.use('/trackName',trackNameRoutes)
-app.use('/myName',myNameRoutes)
+app.use('/data', dataRoutes)
+app.use('/trackName', trackNameRoutes)
+app.use('/myName', myNameRoutes)
 
 app.listen('3000')
