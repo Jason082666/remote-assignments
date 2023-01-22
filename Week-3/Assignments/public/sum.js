@@ -18,10 +18,13 @@ input.addEventListener('input', (event) => {
 
 button.addEventListener('click', (event) => {
   const hint = document.createElement('h2')
-  hint.innerText = 'Please enter a number in the input box!'
   event.preventDefault()
   if(!input.value) {
-    box.after(hint)
+    number.innerHTML = 'Please enter a number in the input box!'
+    box.after(number)
+    return
+  } else {
+    number.innerHTML=''
   }
   xhr.send()
 })

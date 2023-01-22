@@ -1,7 +1,7 @@
 extend layout 
 block content 
   if username 
-    strong Done.
+    strong= username
   else
     form(action='/trackName', method='get')
       label Please enter your name: 
