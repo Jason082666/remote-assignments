@@ -8,11 +8,11 @@ router.get('/', (req, res) => {
   } else if (Number.isInteger(number) === false) {
     return res.send('<h1>Wrong Parameter</h1>')
   }
-  const answer = Math(number)
+  const answer = NumberSum(number)
   res.send(`<h1>${answer}</h1>`)
 })
 // function here!
-function Math(input) {
+function NumberSum(input) {
   let answer = ((input + 1) * input) / 2
   return answer
 }
