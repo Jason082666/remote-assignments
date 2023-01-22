@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
   const number = +req.query.number
   if (!req.query.number) {
     return res.send('<h1>Lack of Parameter</h1>')
-  } else if (Number.isInteger(number) === false) {
+  } else if (Number.isInteger(number) === false || number < 0) {
     return res.send('<h1>Wrong Parameter</h1>')
   }
   const answer = NumberSum(number)

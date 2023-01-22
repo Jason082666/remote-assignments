@@ -17,6 +17,7 @@ input.addEventListener('input', (event) => {
 
 
 button.addEventListener('click', (event) => {
+  detectNumber()
   const hint = document.createElement('h2')
   event.preventDefault()
   if(!input.value) {
@@ -28,3 +29,10 @@ button.addEventListener('click', (event) => {
   }
   xhr.send()
 })
+
+function detectNumber() {
+  const value = input.value
+  if(+value < 0 || Number.isInteger(+value) === false){
+    alert('Please enter a positive number !')
+  } 
+}
