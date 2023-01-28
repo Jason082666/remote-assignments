@@ -1,4 +1,4 @@
-function ajax(src,callback) {
+function ajax(src, callback) {
   // your code here
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
@@ -20,7 +20,7 @@ function ajax(src,callback) {
 
 function render(data) {
   // your code here
-  data.map((element)=>{
+  data.map((element) => {
     const name = element.name
     const price = element.price
     const description = element.description
