@@ -26,8 +26,8 @@ function render(data) {
     const description = element.description
     const box = document.createElement('div')
     box.className = 'box'
-    box.innerHTML = `<div class='name'>${name}</div> 
-    <div class='price'>${price}</div>
+    box.innerHTML = `<div class='name'>name:  ${name}</div> 
+    <div class='price'>price:  ${price}</div>
     <div class='description'>${description}</div>`
     const container = document.querySelector('.container')
     container.appendChild(box)
