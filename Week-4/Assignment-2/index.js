@@ -1,21 +1,19 @@
 function ajax(src, callback) {
   // your code here
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', src)
-    xhr.onload = () => {
-      if (xhr.status === 200) {
-        const data = JSON.parse(xhr.responseText)
-        resolve(callback(data))
-      } else {
-        reject(Error(xhr.statusText))
-      }
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', src)
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText)
+      return callback(data)
+    } else {
+      console.log(Error(xhr.statusText))
     }
-    xhr.onerror = () => {
-      reject(Error('A network error occured !'))
-    }
-    xhr.send()
-  })
+  }
+  xhr.onerror = () => {
+    console.log(Error('A network error occured !'))
+  }
+  xhr.send()
 }
 
 function render(data) {
