@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.title {
+  font-size: 56px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px auto 0;
+  min-width: 500px;
+  justify-content: space-around;
+}
+
+.box{
+  background-color: aliceblue;
+  box-shadow: 3px 3px 3px 3px gray;
+  height:300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
