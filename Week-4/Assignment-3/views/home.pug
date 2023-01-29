@@ -1,0 +1,22 @@
+extend layout 
+block content 
+  if err 
+    .err-message= err
+  .sign-in
+    form(action='/signin' method='post' class='signin')
+      h3 Sign in here
+      label(for='email') Email
+      input#email(type='text' name='email')
+      label(for='password') Password
+      input#password(type='text' name='password')
+      button(type='submit') confirm  
+  h2 Not a member ? Sign up here !
+  .sign-up
+    form(action='/signup' method='post' class='signup')
+      label(for='name') Name
+      input#name(type='text' name='name' placeholder='number is allowed')
+      label(for='email') Email
+      input#email(type='text' name='email' placeholder='XXXX@gmail.com')
+      label(for='password') Password
+      input#password(type='text' name='password' placeholder='number is allowed')
+      button(type='submit') submit

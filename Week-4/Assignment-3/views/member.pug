@@ -1,0 +1,5 @@
+extend layout 
+block content 
+  h1(class='member') Welcome ! #{username}
+  form(action='/logout' method='post' class='member')
+    button(type='submit') log out
