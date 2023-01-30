@@ -18,9 +18,9 @@ router.post('/', async (req, res) => {
       res.cookie('username', result)
       res.redirect('/member') 
   } else {
-    const err = new Error('wrong email or password!')
+    const err1 = new Error('wrong email or password!')
     res.render('home', {
-      err
+      err1
     })
   }
 })

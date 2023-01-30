@@ -2,21 +2,23 @@ extend layout
 block content 
   if err 
     .err-message= err
+  if err1 
+    .err-message1= err1  
   .sign-in
     form(action='/signin' method='post' class='signin')
       h3 Sign in here
       label(for='email') Email
-      input#email(type='text' name='email')
+      input#email(type='text' name='email' autocomplete='off')
       label(for='password') Password
-      input#password(type='text' name='password')
-      button(type='submit') confirm  
+      input#password(type='password' name='password' autocomplete='off')
+      button(type='submit' class='sign-in-button') confirm  
   h2 Not a member ? Sign up here !
   .sign-up
     form(action='/signup' method='post' class='signup')
-      label(for='name') Name
-      input#name(type='text' name='name' placeholder='number is allowed')
-      label(for='email') Email
-      input#email(type='text' name='email' placeholder='XXXX@gmail.com')
-      label(for='password') Password
-      input#password(type='text' name='password' placeholder='number is allowed')
-      button(type='submit') submit
+      label(for='sign-up-name') Name
+      input#sign-up-name(type='text' name='name' placeholder='number is allowed' autocomplete='off')
+      label(for='sign-up-email') Email
+      input#sign-up-email(type='text' name='email' placeholder='XXXX@xxx.com' autocomplete='off')
+      label(for='sign-up-password') Password
+      input#sign-up-password(type='text' name='password' placeholder='at least 6 characters' autocomplete='off')
+      button(type='submit' class='sign-up-button') submit

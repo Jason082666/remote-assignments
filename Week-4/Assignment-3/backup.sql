@@ -30,7 +30,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `email_2` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Amy','1234@gmail.com','1234'),(2,'Amy','123@gmail.com','1234'),(5,'Jamy','sww@gmail.com','3dddds'),(7,'Jamy','sw@gmail.com','3dddds'),(8,'123','123','123'),(9,'蔡見昇','11111@gmail','22222'),(10,'','',''),(16,'123','1232','123'),(17,'','11',''),(19,'1234','12','123'),(20,'1234','222222','123455666'),(21,'223333','1111','11111'),(22,'sdff','wwww','ffvdzfdz'),(23,'www','www','www'),(25,'eee','eee','eee'),(27,'123','121','12'),(28,'123','ffff','122'),(29,'4rrr','wwwr34rw','rerwea'),(31,'ww','wwwwwww','www'),(32,'123eq','qwd','as'),(37,'jk','1234','kl'),(38,'ww','111','22222');
+INSERT INTO `user` VALUES (1,'Amy','1234@gmail.com','1234'),(2,'Amy','123@gmail.com','1234'),(5,'Jamy','sww@gmail.com','3dddds'),(7,'Jamy','sw@gmail.com','3dddds'),(8,'123','123','123'),(9,'蔡見昇','11111@gmail','22222'),(10,'','',''),(16,'123','1232','123'),(17,'','11',''),(19,'1234','12','123'),(20,'1234','222222','123455666'),(21,'223333','1111','11111'),(22,'sdff','wwww','ffvdzfdz'),(23,'www','www','www'),(25,'eee','eee','eee'),(27,'123','121','12'),(28,'123','ffff','122'),(29,'4rrr','wwwr34rw','rerwea'),(31,'ww','wwwwwww','www'),(32,'123eq','qwd','as'),(37,'jk','1234','kl'),(38,'ww','111','22222'),(40,'22','222','22'),(42,'123','w1','123'),(44,'123','see89826@gmail.com','12ew'),(46,'wfdsasa','saf@gmail.com','asdfas'),(47,'AWDS','wqw@sda.com','sdas'),(48,'weq','df@qw.com','qw'),(49,'sdfF','SEEW@FWF.DA','SSSSSSSSS');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 23:13:06
+-- Dump completed on 2023-01-30 13:05:22

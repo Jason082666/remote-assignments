@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 app.set('view engine', 'pug')
 app.use(cookieParser())
 app.use(express.urlencoded())
+app.use(express.json())
 app.use(express.static('public'))
 app.use('/static',express.static('public'))
 
@@ -17,6 +18,12 @@ app.use('/home',homeRoutes)
 app.use('/signin',signinRoutes)
 app.use('/signup',signupRoutes)
 app.use('/member',memberRoutes)
+
+
+app.get('/',(req,res)=>{
+  res.redirect('/home')
+})
+
 
 app.post('/logout',(req,res)=>{
   res.clearCookie('username')
