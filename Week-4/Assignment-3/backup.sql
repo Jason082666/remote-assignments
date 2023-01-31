@@ -30,7 +30,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `email_2` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (67,'Jason','123ss@gmail.com','123456'),(68,'Amy','amy123@yahoo.com.tw','amy0921'),(69,'Jessica','jessica0123@gmail.com','qq12345'),(70,'Alen','alenlin@kcc.com','alen0821');
+INSERT INTO `user` VALUES (67,'Jason','123ss@gmail.com','123456'),(68,'Amy','amy123@yahoo.com.tw','amy0921'),(69,'Jessica','jessica0123@gmail.com','qq12345'),(70,'Alen','alenlin@kcc.com','alen0821'),(71,'Ivan ','Ivan737@gmail.com','eddgegg'),(72,'Jessica','jessicaee12@git.com','sdfgewrhw'),(74,'Mayumi','Mayi@gmail.com','fegojoe'),(77,'Allesa','Allesa@yahoo.com.tw','jekuwq'),(78,'Hanna','hanna@gmail.com','jdkfewe'),(82,'Alice','Alice@gmail.com','123456789'),(83,'Dan','Dan438291@gmail.com','fhejirew');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-31 20:19:02
+-- Dump completed on 2023-01-31 21:59:53

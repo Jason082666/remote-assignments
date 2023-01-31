@@ -9,6 +9,7 @@ signupButton.addEventListener('click',()=>{
   checkstatus(name.value, email.value, password.value)
 })
 
+// 先在前端檢查使用者輸入的資料是否有誤，包括檢查欄位是否皆有填、email是否格式正確、密碼長度正確等，確定沒有問題後，才把資料送給後端伺服器。
 function checkstatus(name,email,password){
   if (name === '' || email === '' || password === '') {
       alert('You need to fill in all the blank!')

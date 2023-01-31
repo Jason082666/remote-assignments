@@ -13,10 +13,14 @@ router.post('/', async (req, res) => {
     email,
     password
   } = req.body
-  
-// 後端再次filter來自前端的資料
-    try {
-    checkstatus(name,email,password)
+
+  // 後端再次filter來自前端的資料
+  try {
+    // 檢查是否三個欄位都有填到，且email格式正確，密碼位數正確
+    checkstatus(name, email, password)
+    // 檢查email是否已經註冊過
+    await findEmail(email)
+    // 檢查資料皆正確，則在mysql中建置資料
     const node = await createNode(name, email, password)
     console.log(node)
     res.cookie('username', node.name)
@@ -28,21 +32,33 @@ router.post('/', async (req, res) => {
   }
 })
 
-function checkstatus(name,email,password){
+// 分別檢查三個欄位是否都有填到、email格式正確性以及密碼長度
+function checkstatus(name, email, password) {
   if (name === '' || email === '' || password === '') {
-      throw 'You need to fill in all the blank!'
-    } else if(IsEmail(email) === false) {
-      throw 'Please enter the right email'
-    } else if(password.length < 6 || password.length > 10) {
-      throw 'The password must be 6 ~ 10 characters!'
-    }
+    throw 'You need to fill in all the blank!'
+  } else if (IsEmail(email) === false) {
+    throw 'Please enter the right email'
+  } else if (password.length < 6 || password.length > 10) {
+    throw 'The password must be 6 ~ 10 characters!'
+  }
 }
+
 function IsEmail(email) {
   var regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/
-  if(!regex.test(email)) {
+  if (!regex.test(email)) {
     return false;
-  }else{
+  } else {
     return true;
   }
+}
+
+// 用function來愈先審視email是否有重複，來解決sql因unique key衝突所造成primary key 有間隔的問題
+async function findEmail(email) {
+  const profiles = await Getnodes()
+  profiles.forEach(profile => {
+    if (profile.email === email) {
+      throw 'The email has already been registered'
+    }
+  });
 }
 module.exports = router
