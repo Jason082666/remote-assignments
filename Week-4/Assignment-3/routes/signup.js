@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     password
   } = req.body
   
-// 後端filter來自前端的資料
+// 後端再次filter來自前端的資料
     try {
     checkstatus(name,email,password)
     const node = await createNode(name, email, password)
@@ -34,7 +34,7 @@ function checkstatus(name,email,password){
     } else if(IsEmail(email) === false) {
       throw 'Please enter the right email'
     } else if(password.length < 6 || password.length > 10) {
-      throw 'The password must be 6 ~ 15 characters!'
+      throw 'The password must be 6 ~ 10 characters!'
     }
 }
 function IsEmail(email) {
