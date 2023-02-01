@@ -51,7 +51,7 @@ function IsEmail(email) {
   }
 }
 
-// 用function來愈先審視email是否有重複，來解決sql因unique key衝突所造成primary key 有間隔的問題
+// 用function來預先審視email是否有重複，來解決sql因unique key衝突所造成primary key 有間隔的問題，若email已被註冊過，則不執行createNode() function。
 async function findEmail(email) {
   const profiles = await Getnodes()
   profiles.forEach(profile => {
