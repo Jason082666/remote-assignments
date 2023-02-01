@@ -1,7 +1,6 @@
 function delayedResult(n1, n2, delayTime, callback) {
 // your code here
 const result = n1 +n2
-callback = (result)=>{console.log(result)}
 setTimeout(callback,delayTime,result)
 }
 
