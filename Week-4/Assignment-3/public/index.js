@@ -15,8 +15,8 @@ function checkstatus(name,email,password){
       alert('You need to fill in all the blank!')
     } else if(IsEmail(email) === false) {
       alert('Please enter the right email') 
-    } else if(password.length < 6 || password.length > 10) {
-      alert('The password must be 6 ~ 10 characters!')
+    } else if(password.length < 6 || password.length > 20) {
+      alert('The password must be 6 ~ 20 characters!')
     } else {
       signupButton.setAttribute('type','submit')
     }
