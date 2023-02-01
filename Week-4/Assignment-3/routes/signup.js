@@ -22,7 +22,6 @@ router.post('/', async (req, res) => {
     await findEmail(email)
     // 檢查資料皆正確，則在mysql中建置資料
     const node = await createNode(name, email, password)
-    console.log(node)
     res.cookie('username', node.name)
     res.redirect('/member')
   } catch (err) {
