@@ -31,12 +31,12 @@ async function findProfile(email, password) {
   const profiles = await Getnodes()
   let result = false
   profiles.forEach(profile => {
-      if (profile.email === email && profile.password === password) {
-        result = profile.name
-      }
-    })
-    return result
-  }
+    if (profile.email === email && profile.password === password) {
+      result = profile.name
+    }
+  })
+  return result
+}
 
 module.exports = {
   Getnode,
