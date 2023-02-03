@@ -21,11 +21,15 @@ async function Getnodes() {
 }
 
 async function createNode(name, email, password) {
-  const [response] = await pool.query(`INSERT INTO user (name,email,password) VALUES (?,?,?)`, [name, email, password])
-  const id = response.insertId
-  return Getnode(id)
+  try {
+    const [response] = await pool.query(`INSERT INTO user (name,email,password) VALUES (?,?,?)`, [name, email, password])
+    const id = response.insertId
+    return Getnode(id)
+  } catch (e) {
+    return false
+  }
 }
-
+createNode('1234', 'Alice@gmail.com', '123456').then(console.log)
 
 async function findProfile(email, password) {
   const profiles = await Getnodes()
