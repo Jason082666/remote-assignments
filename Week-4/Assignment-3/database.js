@@ -29,7 +29,6 @@ async function createNode(name, email, password) {
     return false
   }
 }
-createNode('1234', 'Alice@gmail.com', '123456').then(console.log)
 
 async function findProfile(email, password) {
   const profiles = await Getnodes()
@@ -42,9 +41,17 @@ async function findProfile(email, password) {
   return result
 }
 
+async function loginCheck(email,password) {
+  const [response] = await pool.query(`SELECT * FROM user WHERE email = ? AND password = ?`,[email,password])
+  return response[0]
+}
+
+loginCheck('Ana@gmail.com','123456')
+
 module.exports = {
   Getnode,
   Getnodes,
   createNode,
-  findProfile
+  findProfile,
+  loginCheck
 }
