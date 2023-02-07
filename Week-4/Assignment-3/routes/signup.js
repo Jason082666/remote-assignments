@@ -22,7 +22,8 @@ router.post('/', async (req, res) => {
     if (node === false) {
       throw 'this email has been registered!'
     }
-    res.cookie('username', node.name)
+    req.session.authenticated = true
+    req.session.name = node.name
     res.redirect('/member')
   } catch (err) {
     res.render('home', {

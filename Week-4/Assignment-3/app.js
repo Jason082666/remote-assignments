@@ -1,13 +1,24 @@
 const express = require('express')
 const app = express()
+const session = require('express-session')
+const store = new session.MemoryStore()
 
-const cookieParser = require('cookie-parser')
 app.set('view engine', 'pug')
-app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
 app.use('/static', express.static('public'))
+
+app.use(session({
+  secret: 'some secret',
+  cookie: {
+    maxAge: 300000,
+    sameSite: true
+  },
+  saveUninitialized: false,
+  store,
+  resave: false
+}))
 
 const homeRoutes = require('./routes/home')
 const signinRoutes = require('./routes/signin')
@@ -19,14 +30,15 @@ app.use('/signin', signinRoutes)
 app.use('/signup', signupRoutes)
 app.use('/member', memberRoutes)
 
-
 app.get('/', (req, res) => {
+  console.log(store)
   res.redirect('/home')
 })
 
 
 app.post('/logout', (req, res) => {
-  res.clearCookie('username')
+  req.session.destroy()
+  console.log(store)
   res.redirect('/home')
 })
 
